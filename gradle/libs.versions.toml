@@ -1,0 +1,20 @@
+metadata.format.version = "1.1"
+
+[versions]
+
+guava = "33.3.1-jre"
+lombok = "8.12.2.1"
+annotations = "26.0.1"
+jabel = "0.4.2"
+hikaricp = "6.3.0"
+
+[libraries]
+
+hikaricp = { group = "com.zaxxer", name = "HikariCP", version.ref = "hikaricp" }
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+jabel = { group = "com.github.bsideup.jabel", name = "jabel-javac-plugin", version.ref = "jabel" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+
+[plugins]
+
+lombok = { id = "io.freefair.lombok", version.ref = "lombok" }
