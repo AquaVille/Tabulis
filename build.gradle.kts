@@ -1,5 +1,5 @@
 plugins {
-    java
+    `java-library`
     `maven-publish`
     alias(libs.plugins.lombok)
 }
@@ -13,9 +13,14 @@ repositories {
 }
 
 dependencies {
+    // HikariCP
+    api(libs.hikaricp)
+
+    // Utility libraries
     compileOnly(libs.guava)
-    compileOnly(libs.hikaricp)
     compileOnly(libs.annotations)
+
+    // Jabel - older Java support
     annotationProcessor(rootProject.libs.jabel)
     compileOnly(rootProject.libs.jabel)
 }
