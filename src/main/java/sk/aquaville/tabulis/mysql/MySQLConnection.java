@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import sk.aquaville.tabulis.abstraction.DatabaseConnection;
 import sk.aquaville.tabulis.universal.executor.DatabaseExecutor;
 import sk.aquaville.tabulis.universal.query.SQLQueryBuilder;
+import sk.aquaville.tabulis.util.MetadataUtility;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -46,5 +47,10 @@ public final class MySQLConnection implements DatabaseConnection {
 
     public SQLQueryBuilder table(String table) {
         return new SQLQueryBuilder(table, this);
+    }
+
+    @Override
+    public boolean tableExists(String table) throws SQLException {
+        return MetadataUtility.tableExists(this, table);
     }
 }

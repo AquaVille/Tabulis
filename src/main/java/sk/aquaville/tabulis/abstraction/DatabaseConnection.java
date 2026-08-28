@@ -43,4 +43,12 @@ public interface DatabaseConnection {
      */
     QueryBuilder table(String table);
 
+    /**
+     * Checks if a table with the specified name exists in the connected database.
+     *
+     * @param table the name of the table to check for existence
+     * @return true if the table exists, false otherwise
+     * @throws SQLException if a database access error occurs
+     */
+    boolean tableExists(String table) throws SQLException;
 }
